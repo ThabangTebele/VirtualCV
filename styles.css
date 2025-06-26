@@ -3,14 +3,16 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #ffffff;
+  color: #003366; /* Deep blue text */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header, nav, main, footer {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+  background: #007BFF; /* Bootstrap-style blue */
+  color: white;
+  text-align: center;
+  border-radius: 10px;
 }
 
 header {
@@ -19,15 +21,35 @@ header {
   text-align: center;
 }
 
+/* Navigation */
+nav {
+  margin-top: 10px;
+  text-align: center;
+}
+
 nav a {
-  margin-right: 10px;
-  color: #333;
+  margin: 0 10px;
+  color: #007BFF;
   text-decoration: none;
   font-weight: bold;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
 section {
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade-in when in view */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -39,9 +61,13 @@ footer {
 
 body.dark {
   background-color: #121212;
-  color: #f4f4f4;
+  color: #e0e0e0;
 }
 
 body.dark header {
   background-color: #1e1e1e;
+}
+
+body.dark nav a {
+  color: #90caf9;
 }
