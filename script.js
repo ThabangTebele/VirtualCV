@@ -25,3 +25,39 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
   observer.observe(section);
 });
+
+const typingElement = document.getElementById('typing-text');
+
+const texts = ["Thabang", "a Software Developer", "an Innovator", "a Problem Solver"];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let speed = 100;
+
+function type() {
+  const currentText = texts[textIndex];
+  const visibleText = currentText.substring(0, charIndex);
+  typingElement.textContent = visibleText;
+
+  if (!isDeleting && charIndex < currentText.length) {
+    charIndex++;
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+  }
+
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    speed = 1000; // pause before deleting
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    speed = 300; // pause before next word
+  } else {
+    speed = isDeleting ? 50 : 100;
+  }
+
+  setTimeout(type, speed);
+}
+
+document.addEventListener("DOMContentLoaded", type);
+

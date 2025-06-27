@@ -1,3 +1,24 @@
+#intro {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+#typing-text {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #007BFF;
+  transition: color 0.3s ease;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -58,10 +79,15 @@ footer {
   color: #777;
 }
 
+body.dark #typing-text,
+body.dark #cursor {
+  color: #90caf9; /* Soft blue for dark background */
+}
 
 body.dark {
   background-color: #121212;
   color: #e0e0e0;
+  
 }
 
 body.dark header {
@@ -70,4 +96,20 @@ body.dark header {
 
 body.dark nav a {
   color: #90caf9;
+}
+
+#cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: #007BFF;
+  animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
