@@ -44,18 +44,21 @@ header {
 
 /* Navigation */
 nav {
-  margin-top: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-nav a {
-  margin: 0 10px;
-  color: #007BFF;
+.nav-left a,
+.nav-right a {
+  margin: 10px;
   text-decoration: none;
+  color: #007BFF;
   font-weight: bold;
 }
 
-nav a:hover {
+.nav-left a:hover {
   text-decoration: underline;
 }
 
