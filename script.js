@@ -1,13 +1,24 @@
 // Toggle dark mode
-const themeToggle = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+// Load saved theme from localStorage
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  themeToggle.src = "assests/sun.png";
+}
 
-  // Change icon based on theme
-  const isDark = document.body.classList.contains('dark');
-  themeToggle.src = isDark ? 'sun.png' : 'moon.png';
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  const isDark = document.body.classList.contains("dark");
+
+  // Update icon based on mode
+  themeToggle.src = isDark ? "assests/sun.png" : "assests/moon.png";
+
+  // Save preference
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
 
 
 // Fade-in on scroll using Intersection Observer

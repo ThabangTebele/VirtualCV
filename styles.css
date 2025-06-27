@@ -1,66 +1,58 @@
-#intro {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-}
-
-#typing-text {
-  font-weight: bold;
-  font-size: 1.5em;
-  color: #007BFF;
-  transition: color 0.3s ease;
-}
-
+/* ========== General Reset ========== */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  color: #003366; /* Deep blue text */
+  color: #003366;
   transition: background-color 0.3s, color 0.3s;
 }
 
-header, nav, main, footer {
-  background: #007BFF; /* Bootstrap-style blue */
-  color: white;
-  text-align: center;
-  border-radius: 10px;
+a {
+  text-decoration: none;
 }
 
+/* ========== Header ========== */
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-
-/* Navigation */
-nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 15px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 
 .nav-left a,
 .nav-right a {
-  margin: 10px;
-  text-decoration: none;
-  color: #007BFF;
+  margin: 0 15px;
+  color: #007BFF; 
   font-weight: bold;
+  position: relative;
 }
 
-.nav-left a:hover {
-  text-decoration: underline;
+
+.nav-left a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #007BFF;
 }
 
-/* resume section*/
+/* ========== Resume Button ========== */
 #resume-btn {
-  margin-left: auto;
   background-color: #007BFF;
   color: white;
   padding: 8px 14px;
@@ -72,43 +64,57 @@ nav {
   background-color: #0056b3;
 }
 
-/* Sections */
-section {
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* Fade-in when in view */
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
+/* ========== Intro ========== */
+#intro {
   text-align: center;
-  font-size: 0.9em;
-  color: #777;
+  margin-top: 40px;
 }
 
-body.dark #typing-text,
-body.dark #cursor {
-  color: #90caf9; /* Soft blue for dark background */
+.about-intro-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
 }
 
-body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
+.profile-wrapper {
+  flex: 0 0 auto;
+}
+
+.about-wrapper {
+  flex: 1;
+  min-width: 280px;
+  max-width: 700px;
+}
+
+/* Rectangle portrait image */
+.profile-pic {
+  width: 200px;
+  height: auto;
+  max-height: 350px; /* control how tall it gets */
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   
 }
 
-body.dark header {
-  background-color: #1e1e1e;
+/* Align text left */
+.about-wrapper h1,
+.about-wrapper h2,
+.about-wrapper p {
+  text-align: left;
 }
 
-body.dark nav a {
-  color: #90caf9;
+
+
+#typing-text {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #007BFF;
+  transition: color 0.3s ease;
 }
 
 #cursor {
@@ -119,31 +125,24 @@ body.dark nav a {
 }
 
 @keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.theme-icon {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  transition: transform 0.3s;
+/* ========== Sections + Animation ========== */
+section {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.theme-icon:hover {
-  transform: rotate(20deg);
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-
-/*skills section*/
+/* ========== Skills ========== */
 #skills {
   padding: 40px 20px;
   text-align: center;
@@ -181,7 +180,65 @@ body.dark nav a {
   color: #003366;
 }
 
-/* Dark mode */
+/* ========== Contact ========== */
+#contact {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+  vertical-align: middle;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #777;
+  padding: 10px 0;
+}
+
+/* ========== Dark Mode ========== */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background-color: #1e1e1e;
+}
+
+body.dark .nav-left a,
+body.dark .nav-right a {
+  color: #90caf9;
+}
+
+body.dark .nav-left a:hover::after {
+  background-color: #90caf9;
+}
+
+body.dark #typing-text,
+body.dark #cursor {
+  color: #90caf9;
+}
+
+body.dark #resume-btn {
+  background-color: #90caf9;
+  color: #1e1e1e;
+}
+
+body.dark #resume-btn:hover {
+  background-color: #64b5f6;
+}
+
 body.dark .skill-card {
   background-color: #1e1e1e;
   box-shadow: 0 4px 10px rgba(144, 202, 249, 0.1);
@@ -193,5 +250,97 @@ body.dark .skill-card:hover {
 
 body.dark .skill-card p {
   color: #90caf9;
+}
+
+/* Tint sun icon in dark mode */
+body.dark #theme-toggle {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(1069%) hue-rotate(171deg) brightness(92%) contrast(92%);
+}
+
+
+/* ========== Theme Icon ========== */
+.theme-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  transition: transform 0.3s;
+  filter: brightness(0) saturate(100%) invert(28%) sepia(99%) saturate(848%) hue-rotate(182deg) brightness(94%) contrast(90%);
+}
+
+.theme-icon:hover {
+  transform: rotate(20deg);
+}
+
+
+/* ========== Projects ========== */
+#projects {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Make project-card an <a>, so style it */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 120px;
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  color: #003366;
+  text-decoration: none; /* remove underline */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Dark mode */
+body.dark .project-card {
+  background-color: #1e1e1e;
+  color: #90caf9;
+  box-shadow: 0 4px 10px rgba(144, 202, 249, 0.1);
+}
+
+.project-card:hover,
+.project-card:focus {
+  box-shadow: 0 6px 14px rgba(144, 202, 249, 0.2);
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(28%) sepia(99%) saturate(848%) hue-rotate(182deg) brightness(94%) contrast(90%);
+  /* same filter as light mode sun icon */
+  transition: filter 0.3s;
+}
+
+body.dark .project-icon {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(743%) hue-rotate(174deg) brightness(97%) contrast(87%);
+  /* same filter as dark mode sun icon */
 }
 

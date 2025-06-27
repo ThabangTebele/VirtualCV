@@ -11,89 +11,127 @@
     <img id="theme-toggle" src="assests/moon.png" alt="Toggle dark mode" class="theme-icon">
 
     <header>
-        <nav>
-            <a href = "#about" >About </a>
-            <a href = "#skills" >Skills </a>
-            <a href = "#projects" >Projects </a>
-            <a href = "#contact" >Contact </a>
+        <nav class="navbar">
+            <div class="nav-left">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-right">
+            <a href="assests/resume.pdf" target="_blank" id="resume-btn">View Resume</a>
+            </div>
         </nav>
     </header>
 
-    <section id="intro" class="fade-section">
-        <img src="assests/self.jpg" alt="My photo" class="profile-pic">
-        <h1>I'm <span id="typing-text"></span><span id="cursor">|</span></h1>
-
-    </section>
 
 
     
 
     <main>
-        <section id = "about">
-            <h2>About Me</h2>
-            <p>A curious mind with a passion for building smart, practical solutions. With a background in Information Technology and a 
-                growing interest in software development, data analytics, and artificial intelligence, I enjoy turning ideas into functional systems.</p>
+        <section id="intro" class="fade-section about-intro-container">
+            <div class="profile-wrapper">
+                <img src="assests/self.jpg" alt="My photo" class="profile-pic">
+            </div>
 
-            <p>I'm currently pursuing my Honours in IT, where I'm diving into research around machine translation for South African languages.
-                I believe technology should be inclusive and I'm working on providing an insightful empericial study that benefits us all. </p>
+            <div class="about-wrapper">
+                <h1>I'm <span id="typing-text"></span><span id="cursor">|</span></h1>
 
-            <p>Beyond code, I value simplicity, growth, and thoughtful collaboration. I’m always driven and  have a desire to solve real-world problems.</p>
+                <section id="about">
+                    <h2>About Me</h2>
+                    <p>A curious mind with a passion for building smart, practical solutions. With a background in Information Technology and a 
+                    growing interest in software development, data analytics, and artificial intelligence, I enjoy turning ideas into functional systems.</p>
 
+                    <p>I'm currently pursuing my Honours in IT, where I'm diving into research around machine translation for South African languages.
+                    I believe technology should be inclusive and I'm working on providing an insightful empirical study that benefits us all.</p>
+
+                    <p>Beyond code, I value simplicity, growth, and thoughtful collaboration. I’m always driven and have a desire to solve real-world problems.</p>
+                </section>
+            </div>
         </section>
+
 
         <section id="skills">
         <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-            <img src="assests/html5.svg" alt="HTML">
-            <p>HTML</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="assests/html5.svg" alt="HTML">
+                    <p>HTML</p>
+                    </div>
+                    <div class="skill-card">
+                    <img src="assests/css3.svg" alt="CSS">
+                    <p>CSS</p>
+                    </div>
+                    <div class="skill-card">
+                    <img src="assests/javascript.svg" alt="JavaScript">
+                    <p>JavaScript</p>
+                    </div>
+                    <div class="skill-card">
+                    <img src="assests/python.svg" alt="Python">
+                    <p>Python</p>
+                    </div>
+                    <div class="skill-card">
+                    <img src="assests/csharp.svg" alt="C#">
+                    <p>C#</p>
+                    </div>
+                    <div class="skill-card">
+                    <img src="assests/cplusplus.svg" alt="C++">
+                    <p>C++</p>
+                </div>
             </div>
-            <div class="skill-card">
-            <img src="assests/css3.svg" alt="CSS">
-            <p>CSS</p>
-            </div>
-            <div class="skill-card">
-            <img src="assests/javascript.svg" alt="JavaScript">
-            <p>JavaScript</p>
-            </div>
-            <div class="skill-card">
-            <img src="assests/python.svg" alt="Python">
-            <p>Python</p>
-            </div>
-            <div class="skill-card">
-            <img src="assests/csharp.svg" alt="C#">
-            <p>C#</p>
-            </div>
-            <div class="skill-card">
-            <img src="assests/cplusplus.svg" alt="C++">
-            <p>C++</p>
-            </div>
+        </section>
+
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <a href="https://github.com/ThabangTebele/Stroke-Detection" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="assests/stroke.png" alt="Heart Stroke" class="project-icon">
+                <h3>Stroke Detection</h3>
+            </a>
+
+            <a href="https://github.com/ThabangTebele/Crypto-Pipeline" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="assests/crypto.png" alt="Crypto-Pipeline" class="project-icon">
+                <h3>Cryptocurrency Data Pipeline</h3>
+            </a>
+
+            <a href="https://github.com/ThabangTebele/messageApp" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="assests/messaging.png" alt="messageApp" class="project-icon">
+                <h3>Cryptocurrency Data Pipeline</h3>
+            </a>
+
+            <a href="https://github.com/ThabangTebele/EliteHangars" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="assests/plane.png" alt="EliteHangars" class="project-icon">
+                <h3>Hanger Management System </h3>
+            </a>
+
+            <a href="https://github.com/ThabangTebele/CoffeeStore" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="assests/mug.png" alt="CoffeeStore" class="project-icon">
+                <h3>Coffee Management System </h3>
+            </a>
+
+            
+
+            <!-- Add more project links here -->
         </div>
-</section>
+    </section>
 
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Describe a few things you’ve built or are working on.</p>
-        </section>
 
-        <section id ="contact">
-            <div class="nav-left">
-                <h2>Contact Me</h2>
-                <a href="https://github.com/ThabangTebele"> <img src="assests/github.svg" alt = "image of github logo" ></a>
-                <a href="mailto:thabangteble123@gmail.com"> <img src="assests/gmail.png" alt = "image of email logo" ></a>
-                <a href="https://www.linkedin.com/in/thabang-tebele-014895295/"> <img src="assests/linkedin.svg" alt = "image of linkedin logo" ></a>
-            </div>
-
-            <div class="nav-right">
-                <a href="assets/resume.pdf" target="_blank" id="resume-btn">View Resume</a>
-            </div>
-        </section>
+        
 
     </main>
 
     <footer>
-    <p>&copy; 2025 Thabang Tebele</p>
+        <section id ="contact">
+            
+            <h2>Contact Me</h2>
+            <a href="https://github.com/ThabangTebele" target="_blank"> <img src="assests/github.svg" alt = "image of github logo" class="contact-icon"></a>
+            <a href="mailto:thabangteble123@gmail.com"> <img src="assests/gmail.png" alt = "image of email logo" class="contact-icon"></a>
+            <a href="https://www.linkedin.com/in/thabang-tebele-014895295/" target="_blank"> <img src="assests/linkedin.svg" alt = "image of linkedin logo" class="contact-icon"></a>
+        </section>
+        
+        <p>&copy; 2025 Thabang Tebele</p>
     
     </footer>
 
