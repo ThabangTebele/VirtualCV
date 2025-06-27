@@ -30,7 +30,7 @@ sections.forEach(section => {
 
 const typingElement = document.getElementById('typing-text');
 
-const texts = ["Thabang", "a Software Developer", "an Innovator", "a Problem Solver"];
+const texts = ["Thabang Tebele ", "a Software Developer ", "an Innovator ", "a Problem Solver "];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

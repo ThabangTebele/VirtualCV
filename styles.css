@@ -36,11 +36,7 @@ header, nav, main, footer {
   border-radius: 10px;
 }
 
-header {
-  background: #333;
-  color: white;
-  text-align: center;
-}
+
 
 /* Navigation */
 nav {
