@@ -1,12 +1,14 @@
 // Toggle dark mode
-const toggle = document.createElement('button');
-toggle.textContent = 'Toggle Dark Mode';
-toggle.style.margin = '10px';
-document.body.prepend(toggle);
+const themeToggle = document.getElementById('theme-toggle');
 
-toggle.addEventListener('click', () => {
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
+
+  // Change icon based on theme
+  const isDark = document.body.classList.contains('dark');
+  themeToggle.src = isDark ? 'sun.png' : 'moon.png';
 });
+
 
 // Fade-in on scroll using Intersection Observer
 const sections = document.querySelectorAll('section');
